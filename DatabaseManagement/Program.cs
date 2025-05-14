@@ -55,9 +55,24 @@ namespace DatabaseManagement
                     Console.WriteLine("Added the Patients");
 
 
-                    Appointment Appointment1 = new Appointment() { }
+                    Appointment Appointment1 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Prolonged Flu"};
+                    Appointment Appointment2 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Vision Loss" };
+                    Appointment Appointment3 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Unprecedented Amount of Kidney Stones" };
 
+                    TheDatabase.ListOfAppointments.Add(Appointment1);
+                    TheDatabase.ListOfAppointments.Add(Appointment2);
+                    TheDatabase.ListOfAppointments.Add(Appointment3);
+                    TheDatabase.SaveChanges();
+
+                    Console.WriteLine("Added the Appointments");
+
+                    Console.WriteLine("Press Enter To Continue");
+                    Console.ReadLine();
                 }
+            }
+            catch (Exception PossibleException)
+            {
+                Console.WriteLine($"Database Error: {PossibleException.Message}");
             }
         }
     }
