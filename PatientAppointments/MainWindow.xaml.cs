@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PatientAppointments
+namespace PatientAppointments 
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -40,6 +40,21 @@ namespace PatientAppointments
             var Patients = PatientQuery.ToList(); 
         }
 
-       
+
+        private void btnAddPatient_Click(object sender, RoutedEventArgs e)
+        {
+            //This is to add a new patient
+            Patient NewPatient = new Patient() { FirstName = tbxFirstName.Text, Surname = tbxSurname.Text, DOB = dpDOB.SelectedDate, ContactNumber = tbxPhoneNo.Text };
+            TheDatabase.ListOfPatients.Add(NewPatient);
+            TheDatabase.SaveChanges();
+        }
+
+        private void btnAddAppointment_Click(object sender, RoutedEventArgs e)
+        {
+            //This is to add a new patient
+            Appointment NewAppointment = new Appointment() {AppointmentTime = dpAppointmentDate.Text, AppointmentNotes = tbxAppointmentNotes.Text};
+            TheDatabase.ListOfApppointments.Add(NewAppointment);
+            TheDatabase.SaveChanges();
+        }
     }
 }
