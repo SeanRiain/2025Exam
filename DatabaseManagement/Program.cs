@@ -55,9 +55,9 @@ namespace DatabaseManagement
                     Console.WriteLine("Added the Patients");
 
 
-                    Appointment Appointment1 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Prolonged Flu"};
-                    Appointment Appointment2 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Vision Loss" };
-                    Appointment Appointment3 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Unprecedented Amount of Kidney Stones" };
+                    Appointment Appointment1 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Prolonged Flu", PatientID = 1};
+                    Appointment Appointment2 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Vision Loss", PatientID = 2 };
+                Appointment Appointment3 = new Appointment() { AppointmentTime = new DateTime(2025, 12, 13), AppointmentNotes = "Unprecedented Amount of Kidney Stones", PatientID = 3 };
 
                     TheDatabase.ListOfAppointments.Add(Appointment1);
                     TheDatabase.ListOfAppointments.Add(Appointment2);

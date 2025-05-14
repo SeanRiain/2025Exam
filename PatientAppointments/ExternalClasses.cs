@@ -21,6 +21,11 @@ namespace PatientAppointments
         //This class needs to be able to have multiple instances of Appointment, for that we need a list
         //List<What class type will be stored in the list> [NameOfList] { get; set; }
         public virtual List<Appointment> OnePatientsManyAppointments { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Surname}, {FirstName} - {ContactNumber}";
+        }
     }
     public class Appointment
     {
@@ -32,7 +37,9 @@ namespace PatientAppointments
         //it needs access to the primary key/identity variable of that class
         public int PatientID { get; set; }
         //And it also needs to expect an instance of the whole Patient class as well
-        public virtual Patient ThisAppointmentsPatient { get; set; } 
+        public virtual Patient ThisAppointmentsPatient { get; set; }
+
+        
     }
 
     public class PatientData : DbContext
